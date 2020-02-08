@@ -4,6 +4,7 @@
     <title>CSAPP:3e学习笔记</title>
     <url>/2020/02/08/CSAPP-3e%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文是 CSAPP:3e 的学习笔记。</p>
+<hr>
 <a id="more"></a>
 
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h3><p><a href="WSL的安装与使用.md">WSL 的安装与使用</a></p>
@@ -23,6 +24,7 @@
     <content><![CDATA[<p>本文介绍如何在 Windows 中安装 WSL，并在 VS Code 中使用。</p>
 <a id="more"></a>
 
+<hr>
 <p>CSAPP 建议使用 Linux 虚拟机来编译 C/C++ 程序，但是使用不太方便。还好微软推出了 WSL，在很多方面可以代替虚拟机。WSL 是 Windows 的 Linux 子系统，编译 C/C++ 程序比较方便，不用再去安装 MinGW 了。以下步骤主要来自 <a href="https://code.visualstudio.com/docs/cpp/config-wsl" target="_blank" rel="noopener">官网</a>，这里额外增加了一些内容（踩了好多坑啊 T^T）。</p>
 <h2 id="安装-WSL"><a href="#安装-WSL" class="headerlink" title="安装 WSL"></a>安装 WSL</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>打开 PowerShell（管理员）并运行：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
