@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSAPP:3e学习笔记</title>
+    <title>CSAPP:3e 学习笔记</title>
     <url>/2020/02/08/CSAPP-3e%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文是 CSAPP:3e 的学习笔记。</p>
 <hr>
 <a id="more"></a>
 
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h3><p><a href="WSL的安装与使用.md">WSL 的安装与使用</a></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h3><p><a href="../WSL的安装与使用/">WSL 的安装与使用</a></p>
 <h3 id="配套课程"><a href="#配套课程" class="headerlink" title="配套课程"></a>配套课程</h3><p>本书是 <a href="http://csapp.cs.cmu.edu/3e/home.html" target="_blank" rel="noopener">CMU 15-213</a> 的教材，目前只有 2015 年的视频。</p>
 <p><a href="https://www.bilibili.com/video/av31289365" target="_blank" rel="noopener">B站</a> 的视频有中文字幕，不过不全，可以从 <a href="https://www.youtube.com/watch?v=4CpHpFu_KYM&list=PL4YtNpAhVHFJVlaD203_8JkUOUT8RYUhY" target="_blank" rel="noopener">油管</a> 下载缺少的视频，然后手动添加 <a href="https://github.com/EugeneLiu/translationCSAPP" target="_blank" rel="noopener">字幕</a>。</p>
 ]]></content>
@@ -19,7 +19,7 @@
       </tags>
   </entry>
   <entry>
-    <title>WSL的安装与使用</title>
+    <title>WSL 的安装与使用</title>
     <url>/2020/02/08/WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>本文介绍如何在 Windows 中安装 WSL，并在 VS Code 中使用。</p>
 <a id="more"></a>
