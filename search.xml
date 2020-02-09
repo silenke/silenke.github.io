@@ -34,8 +34,8 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/02/08/install-wsl/update-apt.png" alt="update-apt"></p>
-<p>安装 GNU 全套工具（gcc，g++，gdb，make）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install build-essential</span><br></pre></td></tr></table></figure>
+<p>安装 GNU 工具（gcc，g++，gdb，make）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install build-essential gdb</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2020/02/08/install-wsl/install-gnu.png" alt="install-gnu"></p>
 <h2 id="在-VS-Code-中使用"><a href="#在-VS-Code-中使用" class="headerlink" title="在 VS Code 中使用"></a>在 VS Code 中使用</h2><p>现在 WSL 就已经准备好了，我们可以在这里开发 C/C++ 程序，只是没有界面而已。为了使用有图形化界面的编辑器，还需要 VS Code。</p>
