@@ -13,6 +13,10 @@
 <li>服务端：Ubuntu 16.04</li>
 </ul>
 <h2 id="在服务端安装-SSH"><a href="#在服务端安装-SSH" class="headerlink" title="在服务端安装 SSH"></a>在服务端安装 SSH</h2><p>服务端必须有自己的 IP，我使用的是 Virtual Box 虚拟机，要先在设置里将网络模式改为桥接，然后重启系统。</p>
+<ul>
+<li>NAT：虚拟机在子网中，外部通过 Windows 访问虚拟机</li>
+<li>桥接：虚拟机拥有独立于 Windows 的 IP，可以和 Windows 通信</li>
+</ul>
 <p>查看 IP：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
 
