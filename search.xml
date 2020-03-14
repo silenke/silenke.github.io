@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在 VS Code 中使用 SSH</title>
+    <url>/2020/03/14/vscode-ssh/</url>
+    <content><![CDATA[<p>本文记录在 VS Code 中使用 SSH 连接远程服务的步骤。</p>
+<a id="more"></a>
+
+<hr>
+<p>SSH 连接了客户端和服务端，默认使用 22 端口。</p>
+<ul>
+<li>客户端：Windows 10</li>
+<li>服务端：Ubuntu 16.04</li>
+</ul>
+<h2 id="在服务端安装-SSH"><a href="#在服务端安装-SSH" class="headerlink" title="在服务端安装 SSH"></a>在服务端安装 SSH</h2><p>服务端必须有自己的 IP，我使用的是 Virtual Box 虚拟机，要先在设置里将网络模式改为桥接，然后重启系统。</p>
+<p>查看 IP：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+
+<p>安装 ssh 服务并启动：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br><span class="line">server sshd start</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自启动 ssh 服务：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable ssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="在客户端安装-SSH"><a href="#在客户端安装-SSH" class="headerlink" title="在客户端安装 SSH"></a>在客户端安装 SSH</h2><p>Windows 10 自带了 SSH 客户端，可以在 powershell 中输入以下命令，连接服务端：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh username@ipaddress</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h2><p>客户端需要将自己的公钥放在服务端。</p>
+<p>在 powershell 中输入 <code>ssh-keygen</code>，会在 <code>C:\Users\username\.ssh</code> 目录下生成密钥。</p>
+<ul>
+<li><code>idrsa</code>：私钥</li>
+<li><code>idrsa.pub</code>：公钥。</li>
+</ul>
+<p>公钥需要放在服务端的 <code>.ssh</code> 目录的 <code>authorized_keys</code> 文件中，必须设置权限：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">chmod 600 authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>然后将客户端 <code>idrsa.pub</code> 中的内容复制到 <code>authorized_keys</code> 中。</p>
+<h2 id="设置-VS-Code"><a href="#设置-VS-Code" class="headerlink" title="设置 VS Code"></a>设置 VS Code</h2><p>在商店查找 <code>remote</code>，选择 <code>Remote Development</code> 和 <code>Remote SSH</code> 安装。</p>
+<p>在左边的 <code>远程资源管理</code> 选择 <code>SSH Targets</code>，点击 <code>Configure</code>，选择第一个文件进行配置：</p>
+<ul>
+<li><code>Host</code>：服务端主机的名称（只在 Code 中使用，与服务端无关）</li>
+<li><code>HostName</code>：服务端主机的 IP</li>
+<li><code>User</code>：登录使用的用户名</li>
+</ul>
+<p>配置好后，点击 <code>Connect</code>，连接到服务端。</p>
+]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WSL 的安装与使用</title>
     <url>/2020/02/08/install-wsl/</url>
     <content><![CDATA[<p>本文介绍如何在 Windows 中安装 WSL，并在 VS Code 中使用。</p>

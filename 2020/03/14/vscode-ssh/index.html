@@ -45,15 +45,21 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小妖什么">
-<meta property="og:url" content="http://yoursite.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+  <meta name="description" content="本文记录在 VS Code 中使用 SSH 连接远程服务的步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 VS Code 中使用 SSH">
+<meta property="og:url" content="http://yoursite.com/2020/03/14/vscode-ssh/index.html">
 <meta property="og:site_name" content="小妖什么">
+<meta property="og:description" content="本文记录在 VS Code 中使用 SSH 连接远程服务的步骤。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-14T00:56:08.000Z">
+<meta property="article:modified_time" content="2020-03-14T01:54:56.212Z">
 <meta property="article:author" content="Silent Ke">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+<link rel="canonical" href="http://yoursite.com/2020/03/14/vscode-ssh/">
 
 
 <script id="page-configurations">
@@ -61,13 +67,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: 环境搭建 | 小妖什么</title>
+  <title>在 VS Code 中使用 SSH | 小妖什么</title>
   
 
 
@@ -182,70 +188,132 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">环境搭建
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/14/vscode-ssh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Silent Ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小妖什么">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在 VS Code 中使用 SSH
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-14 08:56:08 / 修改时间：09:54:56" itemprop="dateCreated datePublished" datetime="2020-03-14T08:56:08+08:00">2020-03-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>本文记录在 VS Code 中使用 SSH 连接远程服务的步骤。</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<hr>
+<p>SSH 连接了客户端和服务端，默认使用 22 端口。</p>
+<ul>
+<li>客户端：Windows 10</li>
+<li>服务端：Ubuntu 16.04</li>
+</ul>
+<h2 id="在服务端安装-SSH"><a href="#在服务端安装-SSH" class="headerlink" title="在服务端安装 SSH"></a>在服务端安装 SSH</h2><p>服务端必须有自己的 IP，我使用的是 Virtual Box 虚拟机，要先在设置里将网络模式改为桥接，然后重启系统。</p>
+<p>查看 IP：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-14T08:56:08+08:00"
-              content="2020-03-14">
-          03-14
-        </time>
-      </div>
+<p>安装 ssh 服务并启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br><span class="line">server sshd start</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/14/vscode-ssh/" itemprop="url">
-            <span itemprop="name">在 VS Code 中使用 SSH</span>
-          </a>
-      </h2>
+<p>设置开机自启动 ssh 服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable ssh</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<h2 id="在客户端安装-SSH"><a href="#在客户端安装-SSH" class="headerlink" title="在客户端安装 SSH"></a>在客户端安装 SSH</h2><p>Windows 10 自带了 SSH 客户端，可以在 powershell 中输入以下命令，连接服务端：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@ipaddress</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-08T21:39:57+08:00"
-              content="2020-02-08">
-          02-08
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/08/install-wsl/" itemprop="url">
-            <span itemprop="name">WSL 的安装与使用</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+<h2 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h2><p>客户端需要将自己的公钥放在服务端。</p>
+<p>在 powershell 中输入 <code>ssh-keygen</code>，会在 <code>C:\Users\username\.ssh</code> 目录下生成密钥。</p>
+<ul>
+<li><code>idrsa</code>：私钥</li>
+<li><code>idrsa.pub</code>：公钥。</li>
+</ul>
+<p>公钥需要放在服务端的 <code>.ssh</code> 目录的 <code>authorized_keys</code> 文件中，必须设置权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>然后将客户端 <code>idrsa.pub</code> 中的内容复制到 <code>authorized_keys</code> 中。</p>
+<h2 id="设置-VS-Code"><a href="#设置-VS-Code" class="headerlink" title="设置 VS Code"></a>设置 VS Code</h2><p>在商店查找 <code>remote</code>，选择 <code>Remote Development</code> 和 <code>Remote SSH</code> 安装。</p>
+<p>在左边的 <code>远程资源管理</code> 选择 <code>SSH Targets</code>，点击 <code>Configure</code>，选择第一个文件进行配置：</p>
+<ul>
+<li><code>Host</code>：服务端主机的名称（只在 Code 中使用，与服务端无关）</li>
+<li><code>HostName</code>：服务端主机的 IP</li>
+<li><code>User</code>：登录使用的用户名</li>
+</ul>
+<p>配置好后，点击 <code>Connect</code>，连接到服务端。</p>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/vscode/" rel="tag"><i class="fa fa-tag"></i> vscode</a>
+              <a href="/tags/ssh/" rel="tag"><i class="fa fa-tag"></i> ssh</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/08/install-wsl/" rel="prev" title="WSL 的安装与使用">
+      <i class="fa fa-chevron-left"></i> WSL 的安装与使用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -274,6 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在服务端安装-SSH"><span class="nav-number">1.</span> <span class="nav-text">在服务端安装 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在客户端安装-SSH"><span class="nav-number">2.</span> <span class="nav-text">在客户端安装 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置密钥"><span class="nav-number">3.</span> <span class="nav-text">配置密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-VS-Code"><span class="nav-number">4.</span> <span class="nav-text">设置 VS Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
